@@ -1,0 +1,32 @@
+@ClientApi_HostAddress = http://localhost:5000
+
+GET {{ClientApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+
+### Get all clients
+GET {{ClientApi_HostAddress}}/clients
+Accept: application/json
+
+### Create a new client
+POST {{ClientApi_HostAddress}}/clients
+Content-Type: application/json
+
+{
+  "name": "Roni",
+  "phone": "050-1112233"
+}
+
+### Update a client
+PUT {{ClientApi_HostAddress}}/clients/Roni
+Content-Type: application/json
+
+{
+  "name": "Roni",
+  "phone": "050-9998877"
+}
+
+### Delete a client
+DELETE {{ClientApi_HostAddress}}/clients/Roni
