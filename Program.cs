@@ -328,6 +328,12 @@ app.MapGet("/me", (ClaimsPrincipal user) =>
     return Results.Ok(new { userId, username });
 }).RequireAuthorization();
 
+app.MapGet("/ping", () =>
+{
+    return Results.Ok(new { message = "pong", timestamp = DateTime.UtcNow });
+})
+.WithName("Ping");
+
 app.Run();
 
 
